@@ -2,18 +2,17 @@
 #include <string>
 
 #include "Node.h"
+#include "BST.h"
 
 using namespace std;
 
 int main() {
-	Node* a = new Node;
-	Node* b = new Node("Hello");
-
-	cout << "a's data: " << a->GetData() << endl;
-	cout << "b's data: "<< b->GetData() << endl;
-
-	a->SetRight(b);
-	cout << "a's right node's data: " << a->GetRight()->GetData() << endl;
+	BST a;
+	a.insert("b");
+	a.insert("a");
+	a.insert("g");
+	a.insert("e");
+	a.insert("d");
 
 	system("pause");
 	return 0;

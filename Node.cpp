@@ -32,6 +32,10 @@ Node* Node::GetRight() {
 	return right;
 }
 
+Node* Node::GetPrev() {
+	return prev;
+}
+
 //setters
 void Node::SetData(string val) {
 	data = val;
@@ -43,4 +47,8 @@ void Node::SetLeft(Node* nLeft) {
 
 void Node::SetRight(Node* nRight) {
 	right = nRight;
+}
+
+void Node::SetPrev(Node* nPrev) {
+	prev = nPrev;
 }

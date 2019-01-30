@@ -18,16 +18,18 @@ public:
 	string GetData();
 	Node* GetLeft();
 	Node* GetRight();
+	Node* GetPrev();
 
 	//setters
 	void SetData(string);
 	void SetLeft(Node*);
 	void SetRight(Node*);
-
+	void SetPrev(Node*);
 private:
 	string data;
 	Node* left;
 	Node* right;
+	Node* prev;
 
 };
 
