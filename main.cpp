@@ -14,6 +14,8 @@ int main() {
 	a.insert("e");
 	a.insert("d");
 
+	cout << a.largest() << endl;
+
 	system("pause");
 	return 0;
 }

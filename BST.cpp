@@ -61,8 +61,35 @@ bool BST::search(string val) {
 	curr = top;
 	do {
 		if (curr->GetData() == val) {
-
+			return true;
+		}
+		else {
+			if (curr->GetData() <= val) {
+				curr = curr->GetLeft();
+			}
+			else {
+				curr = curr->GetRight();
+			}
 		}
 
 	} while (curr != NULL);
+	return false;
+}
+
+string BST::largest() {
+	curr = top;
+	do {
+		curr = tmp;
+		curr = curr->GetLeft();
+	} while (curr != NULL);
+	return tmp->GetData();
+}
+
+string BST::smallest() {
+	curr = top;
+	do {
+		curr = tmp;
+		curr = curr->GetRight();
+	} while (curr != NULL);
+	return tmp->GetData();
 }

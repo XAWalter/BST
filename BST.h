@@ -15,7 +15,8 @@ public:
 
 	void insert(string);
 	bool search(string);
-
+	string largest();
+	string smallest();
 
 private:
 	Node* top;

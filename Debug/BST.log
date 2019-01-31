@@ -1,4 +1,2 @@
-﻿  BST.cpp
-  main.cpp
-  Generating Code...
-c:\users\dc\desktop\bst\bst.cpp(68): error C4716: 'BST::search': must return a value
+﻿  main.cpp
+  BST.vcxproj -> C:\Users\dc\Desktop\BST\Debug\BST.exe
