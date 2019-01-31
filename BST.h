@@ -14,9 +14,11 @@ public:
 	BST(string);
 
 	void insert(string);
-	bool search(string);
+	void remove(string);
+	Node* search(string);
 	string largest();
 	string smallest();
+	int height(string);
 
 private:
 	Node* top;

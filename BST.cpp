@@ -57,11 +57,12 @@ void BST::insert(string nVal) {
 	}
 }
 
-bool BST::search(string val) {
+//will return the node* of the position of the searched item
+Node* BST::search(string val) {
 	curr = top;
 	do {
 		if (curr->GetData() == val) {
-			return true;
+			return curr;
 		}
 		else {
 			if (curr->GetData() <= val) {
@@ -73,23 +74,79 @@ bool BST::search(string val) {
 		}
 
 	} while (curr != NULL);
-	return false;
+	return NULL;
 }
 
+//finds the largest data element
 string BST::largest() {
 	curr = top;
 	do {
-		curr = tmp;
+		tmp = curr;
 		curr = curr->GetLeft();
 	} while (curr != NULL);
 	return tmp->GetData();
 }
 
+//finds the smallest data element
 string BST::smallest() {
 	curr = top;
 	do {
-		curr = tmp;
+		tmp = curr;
 		curr = curr->GetRight();
 	} while (curr != NULL);
 	return tmp->GetData();
+}
+
+int BST::height(string val) {
+	curr = top;
+	int hCounter = 0;
+	do {
+		if (curr->GetData() == val) {
+			return hCounter;
+		}
+		else {
+			if (curr->GetData() <= val) {
+				curr = curr->GetLeft();
+			}
+			else {
+				curr = curr->GetRight();
+			}
+			hCounter++;
+		}
+	} while (curr != NULL);
+
+	return -1;
+}
+
+void BST::remove(string val) {
+	Node* r;
+	r = search(val);
+	Node* p = r->GetPrev();
+
+	//find largest left value
+	if (p == NULL) {
+		if (r->GetLeft() != NULL) {
+			r->SetData(r->GetLeft()->GetData());
+			tmp = r->GetLeft()
+		}
+	}
+	if (r->GetLeft() == NULL && r->GetRight() == NULL)
+	{
+		if (r == p->GetLeft()) {
+			p->SetLeft(NULL);
+		}
+		else {
+			p->SetRight(NULL);
+		}
+	}
+	else {
+		if (r->GetLeft() != NULL) {
+			r->SetData(r->GetLeft()->GetData());
+			r->SetLeft(NULL);
+		}
+		else {
+			r->SetData(r->GetRight()->GetData());
+			r->SetRight(NULL);
+		}
+	}
 }

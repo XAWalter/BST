@@ -8,13 +8,17 @@ using namespace std;
 
 int main() {
 	BST a;
+	a.insert("c");
 	a.insert("b");
 	a.insert("a");
-	a.insert("g");
-	a.insert("e");
 	a.insert("d");
+	a.insert("e");
 
 	cout << a.largest() << endl;
+	cout << a.smallest() << endl;
+//	cout << a.height("e") << endl;
+
+	a.remove("c");
 
 	system("pause");
 	return 0;
